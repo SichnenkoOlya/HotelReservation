@@ -1,0 +1,6 @@
+package by.bsuir.hotelReservation.service.impl;
+
+import by.bsuir.hotelReservation.service.RoomService;
+
+public class RoomServiceImpl implements RoomService {
+}

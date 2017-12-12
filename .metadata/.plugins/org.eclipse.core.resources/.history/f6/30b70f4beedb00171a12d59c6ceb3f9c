@@ -1,0 +1,25 @@
+# Locale en_US
+language = en
+label.electronicLibrary=Electronic library
+label.welcome=Welcome!
+label.login=Login:
+label.password=Password:
+label.availableBooks=Our rooms:
+label.nickname=Name:
+label.select=Enter the title of the book:
+label.searchBook=Search:
+label.vacantRooms=Vacant rooms:
+label.exit=Exit
+label.number=Number:
+label.type=Type of room:
+label.countOfPeople=Count of places:
+label.footer=© 2017.Hotel.All rights reserved
+label.hello=Hello,
+label.registration=Registration
+label.sign=Sign in
+label.room=Room \u2116
+label.enter= Entering your account 
+label.addRoom=Add new room
+label.deleteRoom=Delete room
+label.freeRoom=Free room
+label.bookRoom=Book room

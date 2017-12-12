@@ -1,0 +1,30 @@
+package by.bsuir.hotelReservation.domain.dao.impl;
+
+
+import java.util.ArrayList;
+import by.bsuir.archive.dao.DAOUser;
+import by.bsuir.archive.dao.exception.DAOException;
+import by.bsuir.archive.domain.User;
+import by.bsuir.archive.serialization.Serialization;
+import by.bsuir.archive.serialization.exception.SerializationException;
+
+public class DAOUserImpl implements DAOUser {
+
+	protected static ArrayList<User> listOfUser = new ArrayList<User>();
+	protected static String fileDBUser = "DB_FILE_USER.txt";
+
+	@Override
+	public User registerUser(String login, String password) throws DAOException {
+
+		
+		return null;
+	}
+
+	@Override
+	public User authenticateUser(String login, String password) throws DAOException {
+
+
+		return null;
+	}
+
+}

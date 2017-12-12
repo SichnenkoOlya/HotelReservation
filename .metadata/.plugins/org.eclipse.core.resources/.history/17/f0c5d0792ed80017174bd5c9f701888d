@@ -1,0 +1,7 @@
+package by.bsuir.hotelReservation.domain.dao.impl;
+
+import by.bsuir.hotelReservation.domain.dao.DAORoom;
+
+public class DAORoomImpl implements DAORoom {
+
+}

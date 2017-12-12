@@ -1,0 +1,10 @@
+package by.bsuir.hotelReservation.dao;
+
+import by.bsuir.hotelReservation.domain.User;
+import by.bsuir.hotelReservation.domain.dao.exception.DAOException;
+
+public interface DAOUser {
+	User registerUser(String login, String password) throws DAOException;
+
+	User authenticateUser(String login, String password) throws DAOException;
+}

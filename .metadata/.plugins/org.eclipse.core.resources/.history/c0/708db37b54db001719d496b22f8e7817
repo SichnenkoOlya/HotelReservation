@@ -1,0 +1,15 @@
+# Locale en_US
+language = en
+label.electronicLibrary=Electronic library
+label.welcome=Welcome!
+label.login=Login:
+label.password=Password:
+label.availableBooks=Our rooms:
+label.nickname=Name:
+label.select=Enter the title of the book:
+label.searchBook=Search:
+label.vacantRooms=Vacant rooms:
+label.exit=Exit
+label.number=Number
+label.type=Type
+label.countOfPeople=Count of places

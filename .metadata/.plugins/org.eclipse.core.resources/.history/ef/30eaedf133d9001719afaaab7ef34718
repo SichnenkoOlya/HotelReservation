@@ -1,0 +1,19 @@
+package by.bsuir.hotelReservation.dao;
+
+import java.util.Date;
+import java.util.List;
+
+import by.bsuir.hotelReservation.dao.exception.DAOException;
+import by.bsuir.hotelReservation.domain.Room;
+
+public interface DAORoom {
+	List<Room> findAll() throws DAOException;
+
+	List<Room> findVacantRooms() throws DAOException;
+
+	void addRoom(Room room) throws DAOException;
+
+	void updateRoom(Room room) throws DAOException;
+
+	void deleteRoom(Room room) throws DAOException;
+}

@@ -1,0 +1,15 @@
+package by.bsuir.hotelReservation.connection.pool;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public interface ConnectionPool {
+	public void initPoolData() throws ConnectionPoolException;
+
+	public void dispose();
+
+	public Connection takeConnection() throws ConnectionPoolException;
+
+	public void removeConnection() throws ConnectionPoolException;
+}

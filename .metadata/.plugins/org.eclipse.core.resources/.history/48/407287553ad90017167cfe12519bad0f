@@ -1,0 +1,25 @@
+package by.bsuir.hotelReservation.web.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import by.bsuir.hotelReservation.web.controller.command.Command;
+import by.bsuir.hotelReservation.web.controller.command.impl.Authentication;
+import by.bsuir.hotelReservation.web.controller.command.impl.Registration;
+
+
+public class CommandProvider {
+	private Map<String, Command> commands = new HashMap<>();
+
+	public CommandProvider() {
+		commands.put("AUTHENTICATION", new Authentication());
+		commands.put("REGISTRATION", new Registration());
+	}
+
+	Command getCommand(String commandName) {
+		Command command = commands.get(commandName);
+		return command;
+
+	}
+
+}

@@ -1,0 +1,107 @@
+
+ #log_form {
+     position: absolute;
+	 border: 4px solid #9FD95D;
+	 border-radius: 8px;
+	 background: #CAEDA2;
+	 width: 256px;
+ }
+ 
+  #log_form  a {
+  padding: 0 38px 0;
+ }
+ 
+ #h {
+    position: relative;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0px 2px 0 rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    text-align: center;
+    color: #64C3F3;
+    margin: 10px 0 30px 0;
+    letter-spacing: 4px;
+    font: normal 26px Verdana, Helvetica;
+ }
+
+ #h:after, h:before {
+    position: absolute;
+    background-color: #8BD932;
+    content: "";
+    height: 2px;
+    left: 8px;
+    top: 45px;
+    width: 240px;   
+}
+
+#my_field {
+    border: 0;
+}
+
+#username {
+  border: 2px solid #ADED59;
+  border-radius: 4px;
+  padding: 6px 16px 6px 20px;
+  margin: 0 0 6px 0;
+  background: #ECFFD3 url(images//login.png) no-repeat;
+  color: #5F5F5F;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
+}
+
+#username:focus { 
+  outline: none;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1),
+    0 0 6px 3px #FDFFB7;
+}
+
+#password {
+  border: 2px solid #ADED59;
+  border-radius: 4px;
+  padding: 6px 16px 6px 20px;
+  margin: 0 0 6px 0;
+  background: #ECFFD3 url(images//pass.png) no-repeat;
+  color: #5F5F5F;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1);
+}
+
+#password:focus { 
+  outline: none;
+  box-shadow: 
+    inset 0 2px 0 rgba(0,0,0,.2), 
+    0 0 4px rgba(0,0,0,0.1),
+    0 0 6px 3px #FDFFB7;
+}
+
+#but_log {
+  display: inline-block;
+  margin: 0 0 0;
+    padding: 5px 15px;
+  background: #B8ED01;
+  border: 0px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  box-shadow:
+    inset 0px 2px 2px rgba(255,255,255,0.6),
+    2px 2px 2px rgba(0,0,0,0.1),
+    0 0 4px 1px rgba(0,0,0,0.2);
+
+}
+
+#but_log:hover  { 
+ background: #C7FE0A; 
+ color: #40BCFE;
+ box-shadow:
+    inset 0px 2px 2px rgba(255,255,255,0.6),
+    0 2px 2px rgba(0,0,0,0.1),
+    0 0 4px 1px rgba(0,255,255,0.3);
+}
+
+#but_log:active {
+ position: relative;
+ top: 1px;
+}

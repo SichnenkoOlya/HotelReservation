@@ -1,0 +1,61 @@
+package by.bsuir.hotelReservation.web.controller.command.impl;
+
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import by.bsuir.hotelReservation.domain.Room;
+import by.bsuir.hotelReservation.service.RoomService;
+import by.bsuir.hotelReservation.service.ServiceFactory;
+import by.bsuir.hotelReservation.service.exception.ServiceException;
+import by.bsuir.hotelReservation.web.controller.command.Command;
+
+public class AddRoom implements Command {
+	private static final String NUMBER = "number";
+	private static final String TYPE = "type";
+	private static final String COUNT_PLACES = "countOfPeople";
+	private static final String ERROR_MESSAGE = "errorMessage";
+	private static final String MESSAGE_ABOUT_PROBLEM = "Please, fill a form once again.";
+	private static final String CONTENT_TYPE_TEXT_HTML = "text/html;charset=UTF-8";
+	private static final String MESSAGE_SUCCESSFUL_ADDITION = "&message=Book successful addition in library!";
+	private static final String URL_VIEW_ROOMS = "http://localhost:8082/Hotel/Controller?command=VIEW_ALL_ROOMS";
+	private static final String ADD_NEW_ROOM_JSP = "WEB-INF/jsp/viewAllRoom.jsp";
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		response.setContentType(CONTENT_TYPE_TEXT_HTML);
+		try {
+			final int number = Integer.parseInt(request.getParameter(NUMBER));
+			final int type = Integer.parseInt(request.getParameter(TYPE));
+			final int countOfPeople = Integer.parseInt(request.getParameter(COUNT_PLACES));
+
+			ServiceFactory factory = ServiceFactory.getInstance();
+			RoomService roomService = factory.getRoomService();
+
+			Room room = new Room(number, type, countOfPeople);
+
+			roomService.addRoom(room);
+
+			String urlWithMessage = URL_VIEW_ROOMS + MESSAGE_SUCCESSFUL_ADDITION;
+
+			response.sendRedirect(urlWithMessage);
+
+		} catch (ServiceException e) {
+
+			request.setAttribute(ERROR_MESSAGE, MESSAGE_ABOUT_PROBLEM);
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher(ADD_NEW_ROOM_JSP);
+			dispatcher.forward(request, response);
+
+		} catch (NumberFormatException ex) {
+			request.setAttribute(ERROR_MESSAGE, MESSAGE_ABOUT_PROBLEM);
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher(ADD_NEW_ROOM_JSP);
+			dispatcher.forward(request, response);
+
+		}
+	}
+}

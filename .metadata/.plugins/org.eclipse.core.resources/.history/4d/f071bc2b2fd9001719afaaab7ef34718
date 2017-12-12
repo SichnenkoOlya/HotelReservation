@@ -1,0 +1,42 @@
+package by.bsuir.hotelReservation.dao.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import by.bsuir.hotelReservation.dao.DAORoom;
+import by.bsuir.hotelReservation.dao.exception.DAOException;
+import by.bsuir.hotelReservation.domain.Room;
+
+public class DAORoomImpl implements DAORoom {
+
+	@Override
+	public List<Room> findAll() throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Room> findVacantRooms() throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addRoom(Room room) throws DAOException {
+		// TODO Auto-generated method stub
+	
+	}
+
+	@Override
+	public void updateRoom(Room room) throws DAOException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteRoom(Room room) throws DAOException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

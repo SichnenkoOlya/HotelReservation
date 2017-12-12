@@ -1,0 +1,67 @@
+1512372525003	Delete element
+1512378236448	Encapsulate field 'isVacant'
+1512387572957	Encapsulate field 'id'
+1512407283480	Delete element
+1512415284504	Delete element
+1512415300426	Move 'index.jsp' to 'jsp'
+1512415672235	Delete element
+1512418227905	Delete element
+1512418231095	Delete element
+1512418265098	Rename type 'SQLRoomDAO'
+1512418289247	Rename type 'SQLUserDAO'
+1512420486042	Move 'index.jsp' to 'WEB-INF'
+1512420601846	Delete element
+1512421332695	Delete element
+1512422531655	Delete element
+1512422552475	Copy package
+1512422557985	Delete element
+1512422575481	Copy package
+1512422613281	Copy package
+1512422620359	Delete element
+1512422644669	Copy package
+1512422665019	Copy package
+1512422681656	Delete element
+1512422758907	Delete element
+1512422774386	Move compilation unit
+1512422853586	Move compilation unit
+1512424222457	Rename type 'ViewAllBooks'
+1512425005896	Delete element
+1512425010683	Delete element
+1512425234386	Delete element
+1512425236675	Delete element
+1512425239322	Delete element
+1512425241280	Delete element
+1512426087193	Delete element
+1512426090120	Delete element
+1512461607202	Delete element
+1512461866924	Move 'error.jsp' to 'WebContent'
+1512462128831	Delete element
+1512468358771	Copy files
+1512497304588	Delete element
+1512497360208	Delete elements
+1512497404980	Delete element
+1512497409204	Delete element
+1512500929280	Rename resource 'reg.jsp'
+1512505881130	Rename resource 'addNewBook.jsp'
+1512506287432	Rename type 'ShowAddNewBookForm'
+1512507484923	Move compilation unit
+1512512476934	Delete element
+1512549590779	Rename type 'UpdateRoom'
+1512549998765	Delete element
+1512582583662	Copy file
+1512653418834	Move file
+1512654009620	Move file
+1512654050306	Copy file
+1512654099359	Delete element
+1512682287573	Delete element
+1512682417466	Delete element
+1512682453765	Delete element
+1512682706449	Delete element
+1512683608654	Delete elements
+1512683727046	Delete element
+1512755440026	Delete element
+1512755948101	Delete element
+1512756034385	Rename resource 'style2.css'
+1512765818639	Delete element
+1512899006543	Delete element
+1512899008942	Delete element

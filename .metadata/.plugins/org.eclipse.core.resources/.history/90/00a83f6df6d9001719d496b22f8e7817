@@ -1,0 +1,55 @@
+package by.bsuir.hotelReservation.service.impl;
+
+import by.bsuir.hotelReservation.dao.DAOFactory;
+import by.bsuir.hotelReservation.dao.DAOUser;
+import by.bsuir.hotelReservation.dao.exception.DAOException;
+import by.bsuir.hotelReservation.domain.User;
+import by.bsuir.hotelReservation.service.UserService;
+import by.bsuir.hotelReservation.service.exception.ServiceException;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public User authenticate(String login, String password) throws ServiceException {
+
+		DAOFactory daoFactory = DAOFactory.getInstance();
+		DAOUser userDAO = daoFactory.getUserDAO();
+		User user = null;
+		try {
+			user = userDAO.authorization(login, password);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+		return user;
+	}
+
+	@Override
+	public boolean isAdmin(String login, String password) throws ServiceException {
+		DAOFactory daoFactory = DAOFactory.getInstance();
+		DAOUser userDAO = daoFactory.getUserDAO();
+		try {
+			User user = userDAO.authorization(login, password);
+			if (user.getAccessRights() == 1) {
+				return true;
+			}
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+		return false;
+	}
+
+	@Override
+	public User register(String login, String password) throws ServiceException {
+		DAOFactory daoFactory = DAOFactory.getInstance();
+		DAOUser userDAO = daoFactory.getUserDAO();
+		User user = null;
+		try {
+			userDAO.registration(login, password);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+		return user;
+	}
+
+	
+}

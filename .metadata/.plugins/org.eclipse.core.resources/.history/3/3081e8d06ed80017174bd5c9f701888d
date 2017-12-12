@@ -1,0 +1,5 @@
+package by.bsuir.hotelReservation.connection.pool;
+
+public class MyConnectionPool {
+
+}

@@ -1,0 +1,20 @@
+package by.bsuir.hotelReservation.controller;
+
+import by.bsuir.hotelReservation.controller.command.Command;
+import by.bsuir.hotelReservation.controller.command.exception.CommandException;
+
+public class Controller {
+	private final CommandProvider provider = new CommandProvider();
+
+	public String doAction(String request) {
+		String response = null;
+		String commandName = request.split("\\|")[0];
+		try {
+			Command command = provider.getCommand(commandName);
+			response = command.execute(request);
+		} catch (CommandException e) {
+			response = "error:" + e.getLocalizedMessage() + "\n";
+		}
+		return response;
+	}
+}

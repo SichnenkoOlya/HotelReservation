@@ -1,0 +1,28 @@
+package by.bsuir.hotelReservation.domain.dao;
+
+import by.bsuir.hotelReservation.domain.dao.impl.DAORoomImpl;
+import by.bsuir.hotelReservation.domain.dao.impl.DAOUserImpl;
+
+public class DAOFactory {
+
+	private static final DAOFactory factory = new DAOFactory();
+
+	private final DAOUser userDAO = new DAOUserImpl();
+	private final DAORoom roomDAO = new DAORoomImpl();
+
+	private DAOFactory() {
+	}
+
+	public static DAOFactory getInstance() {
+		return factory;
+	}
+
+	public DAOUser getUserDAO() {
+		return userDAO;
+	}
+
+	public DAORoom getMatterDAO() {
+		return roomDAO;
+	}
+
+}

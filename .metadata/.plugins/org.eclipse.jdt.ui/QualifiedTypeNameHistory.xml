@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.domain.dao.DAORoom"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.domain.dao.exception.DAOException"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.domain.dao.DAOUser"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.domain.dao.impl.DAOUserImpl"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.domain.dao.impl.DAORoomImpl"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.dao.DAOFactory"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.dao.exception.DAOException"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.service.impl.RoomServiceImpl"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.service.impl.UserServiceImpl"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.service.UserService"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.controller.command.impl.Registration"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.controller.command.impl.Authentication"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.controller.command.exception.CommandException"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.dao.DAOUser"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.dao.impl.SQLUserDAO"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.dao.impl.SQLRoomDAO"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.schemagen.xmlschema.List"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.dao.DAORoom"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.domain.User"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.connection.pool.ConnectionPoolFactory"/>
+<fullyQualifiedTypeName name="org.apache.tomcat.jdbc.pool.ConnectionPool"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.connection.pool.ConnectionPool"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.connection.pool.ConnectionPoolException"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.controller.command.Command"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.web.controller.command.impl.Authentication"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.web.controller.command.impl.Registration"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.service.ServiceFactory"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.service.RoomService"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.domain.Room"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.service.exception.ServiceException"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.web.controller.command.impl.ViewAllRoom"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.web.controller.command.Command"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.web.controller.command.impl.LocaleRu"/>
+<fullyQualifiedTypeName name="by.bsuir.hotelReservation.web.controller.command.impl.LocaleEn"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

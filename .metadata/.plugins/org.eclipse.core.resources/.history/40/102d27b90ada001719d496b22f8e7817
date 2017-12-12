@@ -1,0 +1,5 @@
+package by.bsuir.hotelReservation.web.controller.command.impl;
+
+public class DeleteRoom {
+
+}

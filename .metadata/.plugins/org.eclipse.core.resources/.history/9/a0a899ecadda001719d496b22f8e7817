@@ -1,0 +1,82 @@
+html, body {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#wrapper {
+	width: 100%;
+	margin-top: 0px;
+}
+#header h1 {
+	text-align: center; margin: -70px 200px 0px 150px;color: #ffff1a
+}
+#main{
+ background: #95caea; /* Цвет фона */
+ margin:auto;
+ padding: 5px;
+}
+#language{
+	display:inline-block;
+	float:right;
+	margin:auto; 
+}
+#languageRu{
+	float:right;
+}
+#languageEn{
+	float:right;	
+}
+#search{
+	margin-left: 20px;
+	float:left;
+}
+#inline{
+	display:inline-block;
+	width: 100%;
+	padding: 25px;
+}
+#content{
+	border: 4px double black;	
+    background: #c7b39b; /* Цвет фона */
+    margin: 0px 120px 30px 80px;
+    float: left;
+	display:block;
+    width:60%;
+    
+}
+#available{
+	text-align: center;
+	margin: 0px 120px 0px 100px;
+	background: #ede06d;	
+}
+
+#enterReg{
+    background: #fdf7bd; /* Цвет фона */
+    margin:0px 25px -30px 100px;
+    display:block;
+    padding: 10px; 
+    float: right; 
+    
+}
+#manage{
+	float: right; 
+}
+#book{
+	margin:10px 25px 20px 140px;
+	
+}
+#image{
+	float: left; 
+
+}
+#information{
+	margin: 70px 0px 50px 0px;
+}
+
+#footer {
+	text-align: center;
+}
+
+
+

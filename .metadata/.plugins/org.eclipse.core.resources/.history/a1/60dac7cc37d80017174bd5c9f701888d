@@ -1,0 +1,6 @@
+package by.bsuir.hotelReservation.dao;
+
+public interface DAORoom {
+
+
+}

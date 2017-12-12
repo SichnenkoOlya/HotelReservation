@@ -1,0 +1,7 @@
+package by.bsuir.hotelReservation.service;
+
+import by.bsuir.hotelReservation.service.exception.ServiceException;
+
+public interface RoomService {
+
+}

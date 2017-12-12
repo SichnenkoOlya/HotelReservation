@@ -1,0 +1,20 @@
+1512291858742	Delete element
+1512307330748	Delete element
+1512307339175	Delete element
+1512307347518	Delete element
+1512307476258	Rename compilation unit 'DAOMatter.java'
+1512307501804	Rename type 'DAOMatterImpl'
+1512307900339	Copy package
+1512307908627	Delete element
+1512307936490	Copy package
+1512307958356	Copy package
+1512307971882	Copy package
+1512307978291	Delete element
+1512308098398	Delete elements
+1512308387240	Delete element
+1512308453088	Rename type 'MatterService'
+1512309482226	Rename type 'MatterServiceImpl'
+1512309520891	Delete element
+1512314307930	Rename type 'ConnectionPoolimpl'
+1512336249654	Move 'mysql-connector-java-5.1.42-bin.jar' to 'lib'
+1512336254390	Move 'com.mysql.jdbc_5.1.5.jar' to 'lib'

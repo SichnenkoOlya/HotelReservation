@@ -1,0 +1,75 @@
+package by.web.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+import by.bsuir.hotelReservation.dao.exception.DAOException;
+import by.bsuir.hotelReservation.dao.impl.DAORoomImpl;
+import by.bsuir.hotelReservation.dao.impl.DAOUserImpl;
+import by.bsuir.hotelReservation.domain.Room;
+
+/**
+ * Servlet implementation class FrontController
+ */
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FrontController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		
+		/*SQLUserDAO user = new SQLUserDAO();
+		
+		String login = request.getParameter("Login");
+		String password = request.getParameter("Password");
+		try {
+			user.authorization(login, password);
+		} catch (DAOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+        DAORoomImpl user = new DAORoomImpl();
+		
+		String login = request.getParameter("Login");
+		String password = request.getParameter("Password");
+		
+		Room room = new Room(2,4,3,5,true);
+		try {
+			user.deleteRoom(room);
+		} catch (DAOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		PrintWriter out= response.getWriter();
+		out.println("Your login: "+ login);
+		out.println("<br /> Your password: "+ password);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

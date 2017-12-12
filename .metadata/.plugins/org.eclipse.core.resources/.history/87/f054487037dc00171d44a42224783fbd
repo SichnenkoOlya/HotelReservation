@@ -1,0 +1,266 @@
+package by.bsuir.hotelReservation.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import by.bsuir.hotelReservation.connection.pool.ConnectionPool;
+import by.bsuir.hotelReservation.connection.pool.ConnectionPoolFactory;
+import by.bsuir.hotelReservation.connection.pool.exception.ConnectionPoolException;
+import by.bsuir.hotelReservation.dao.DAORoom;
+import by.bsuir.hotelReservation.dao.exception.DAOException;
+import by.bsuir.hotelReservation.domain.Room;
+
+public class DAORoomImpl implements DAORoom {
+	private static final String SELECT_ALL_ROOM = "SELECT * FROM ROOMS";
+	private static final String SELECT_VACANT_ROOM = "SELECT * FROM ROOMS WHERE ISVACANT='TRUE'";
+	private static final String ADD_ROOM = "INSERT INTO ROOMS (NUMBER,TYPE,COUNTOFPEOPLE,ISVACANT) VALUES(?,?,?,?)";
+	private static final String UPDATE_ROOM = "UPDATE ROOMS SET ISVACANT=? WHERE ID=? ";
+	private static final String DELETE_ROOM = "DELETE FROM ROOMS WHERE ID=?";
+	private static final String MESSAGE_ERROR_CONNECTION_POOL = "Error at connection pool.";
+	private static final String MESSAGE_ERROR_SQL = "Error at sql.";
+	private static final String MESSAGE_ERROR_REMOVE_CONNECTION = "Error at remove connection.";
+	private static final int FIRST = 1;
+	private static final int SECOND = 2;
+	private static final int THIRD = 3;
+	private static final int FOURTH = 4;
+	private static final int FIFTH = 5;
+
+	@Override
+	public List<Room> findAll() throws DAOException {
+		Connection con = null;
+		ResultSet rs = null;
+		Room room = null;
+
+		ArrayList<Room> listofRoom = new ArrayList<Room>();
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = null;
+		try {
+			cp = ObjectCPFactory.getConnectionPool();
+		} catch (ConnectionPoolException e1) {
+			throw DAOException(MESSAGE_ERROR_CONNECTION_POOL);
+		}
+
+		try {
+
+			con = cp.takeConnection();
+			PreparedStatement ps = con.prepareStatement(SELECT_ALL_ROOM);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				int id = rs.getInt(FIRST);
+				int number = rs.getInt(SECOND);
+				int type = rs.getInt(THIRD);
+				int countOfPeople = rs.getInt(FOURTH);
+				boolean isVacant = rs.getBoolean(FIFTH);
+
+				room = new Room(id, number, type, countOfPeople, isVacant);
+				listofRoom.add(room);
+			}
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+			}
+		}
+		return listofRoom;
+	}
+
+	@Override
+	public List<Room> findVacantRooms() throws DAOException {
+		Connection con = null;
+		ResultSet rs = null;
+		Room room = null;
+
+		ArrayList<Room> List = new ArrayList<Room>();
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = null;
+		try {
+			cp = ObjectCPFactory.getConnectionPool();
+		} catch (ConnectionPoolException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+
+			con = cp.takeConnection();
+			PreparedStatement ps = con.prepareStatement(SELECT_VACANT_ROOM);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				int id = rs.getInt(FIRST);
+				int number = rs.getInt(SECOND);
+				int type = rs.getInt(THIRD);
+				int countOfPeople = rs.getInt(FOURTH);
+				boolean isVacant = rs.getBoolean(FIFTH);
+
+				room = new Room(id, number, type, countOfPeople, isVacant);
+				List.add(room);
+			}
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+			}
+		}
+
+		return List;
+	}
+
+	public void addRoom(Room room) throws DAOException {
+
+		Connection con = null;
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = null;
+		try {
+			cp = ObjectCPFactory.getConnectionPool();
+		} catch (ConnectionPoolException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+			con = cp.takeConnection();
+
+			PreparedStatement ps = con.prepareStatement(ADD_ROOM);
+
+			ps.setInt(FIRST, room.getNumber());
+			ps.setInt(SECOND, room.getType());
+			ps.setInt(THIRD, room.getCountOfPeople());
+			ps.setBoolean(FOURTH, room.getIsVacant());
+
+			ps.executeUpdate();
+
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+			}
+		}
+	}
+
+	@Override
+	public void bookRoom(int idRoom) throws DAOException {
+
+		Connection con = null;
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = null;
+		try {
+			cp = ObjectCPFactory.getConnectionPool();
+		} catch (ConnectionPoolException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+			con = cp.takeConnection();
+
+			PreparedStatement ps = con.prepareStatement(UPDATE_ROOM);
+
+			ps.setBoolean(FIRST, false);
+			ps.setInt(SECOND, idRoom);
+			ps.executeUpdate();
+
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+			}
+		}
+	}
+
+	@Override
+	public void freeRoom(int idRoom) throws DAOException {
+
+		Connection con = null;
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = null;
+		try {
+			cp = ObjectCPFactory.getConnectionPool();
+		} catch (ConnectionPoolException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+			con = cp.takeConnection();
+
+			PreparedStatement ps = con.prepareStatement(UPDATE_ROOM);
+
+			ps.setBoolean(FIRST, true);
+			ps.setInt(SECOND, idRoom);
+			ps.executeUpdate();
+
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+			}
+		}
+	}
+
+	@Override
+	public void deleteRoom(int idRoom) throws DAOException {
+
+		Connection con = null;
+
+		ConnectionPoolFactory ObjectCPFactory = ConnectionPoolFactory.getInstance();
+		ConnectionPool cp = null;
+		try {
+			cp = ObjectCPFactory.getConnectionPool();
+		} catch (ConnectionPoolException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+			con = cp.takeConnection();
+
+			PreparedStatement ps = con.prepareStatement(DELETE_ROOM);
+			ps.setInt(FIRST, idRoom);
+			ps.executeUpdate();
+
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		} finally {
+			try {
+				cp.removeConnection();
+			} catch (ConnectionPoolException e) {
+			}
+		}
+
+	}
+
+}
